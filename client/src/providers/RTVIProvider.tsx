@@ -1,16 +1,16 @@
-import { type PropsWithChildren } from 'react';
-import { RTVIClient } from '@pipecat-ai/client-js';
-import { DailyTransport } from '@pipecat-ai/daily-transport';
-import { RTVIClientProvider } from '@pipecat-ai/client-react';
+import { type PropsWithChildren } from "react";
+import { RTVIClient } from "@pipecat-ai/client-js";
+import { DailyTransport } from "@pipecat-ai/daily-transport";
+import { RTVIClientProvider } from "@pipecat-ai/client-react";
 
 const transport = new DailyTransport();
 
 const client = new RTVIClient({
   transport,
   params: {
-    baseUrl: 'http://localhost:7860',
+    baseUrl: import.meta.env.VITE_BACKEND_URL,
     endpoints: {
-      connect: '/connect',
+      connect: "/connect",
     },
   },
   enableMic: true,
